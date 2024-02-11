@@ -35,58 +35,8 @@ $employees_data = $init_app['employee_data'];
 <body>
     <main>
         <section>
-            <div class="chronik">
-                <div class="headline">
-                    <h2>Chronik der Wochenstunden</h2>
-                    <span class="close">&times;</span>
-                </div>
-                <div class="chronik-content">
-                    <div class="content-box-1">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Gültig-Ab Datum</th>
-                                    <th>Wochenstunden</th>
-                                    <th>Änderung gemacht durch</th>
-                                </tr>
-                            </thead>
-                            <tbody id="chronik-table">
-                                <tr>
-                                    <td>01.01.2021</td>
-                                    <td>40h</td>
-                                    <td>Max Mustermann</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="content-box-2">
-                        <h2>Änderungen</h2>
-                        <div>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Letzte Änderung der Wochenstunden</th>
-                                        <th>Alter Wert</th>
-                                        <th>Neuer Wert</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="chronik-changes-table">
-                                    <tr>
-                                        <td>01.01.2021</td>
-                                        <td>40h</td>
-                                        <td>38h</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01.01.2021</td>
-                                        <td>40h</td>
-                                        <td>38h</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="chronik" id="insertContent">
+                
             </div>
         </section>
 
