@@ -24,8 +24,6 @@ class Chronik extends AppInit
 
         $history_file = $this->filter_array_key($history_file, [1, 2, 6]);
 
-
-
         $history_changes_file = $this->filter_array_key($history_changes_file, [2, 3, 4]);
 
         // Build Chronik Data OBJ

@@ -6,6 +6,7 @@ console.log(chronik_div);
 all_buttons.forEach(button => {
     button.addEventListener('click', function() {
         chronik_div.classList.add('show-chronik');
+        console.log(button);
     });
 });
 
