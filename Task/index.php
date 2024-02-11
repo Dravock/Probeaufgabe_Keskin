@@ -35,8 +35,15 @@ $employees_data = $init_app['employee_data'];
 <body>
     <main>
         <section>
-            <div class="chronik" id="insertContent">
-                
+            <div class="chronik">
+                <div class="chronik_inner">
+                    <span class='close'>&times;</span>
+                    <div id="insertContent">
+                        <div class="test">
+                            <span class="loader"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

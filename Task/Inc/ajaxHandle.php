@@ -30,8 +30,7 @@ function handle_ajax_call($ma_id): void
 
     // Return 
     $output = '<div class="headline">';
-        $output .= "<h2>Chronik der Wochenstunden".$ma_id."</h2>";
-        $output .= "<span class='close'>&times;</span>";
+        $output .= "<h2>Chronik der Wochenstunden für ".$chronik_data['employee_name']."</h2>";
     $output .= "</div>";
     $output .= "<div class='chronik-content'>";
         $output .= "<div class='content-box-1'>";

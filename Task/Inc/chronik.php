@@ -4,14 +4,22 @@ declare(strict_types=1);
 class Chronik 
 {
     public $id;
+
     private $chronik_data;
     private $history_uri;
     private $history_changes_uri;
+    private $staff_csv;
+    private $employe_name;
 
     public function __construct(string $id)
     {
         $this->id = $id;
 
+        $this->staff_csv = "../Data/CSV/staff.csv";
+        $file_staff = $this->read_csv($this->staff_csv);
+
+        $this->employe_name = $this->get_employee_name($id,$file_staff);
+    
         $this->history_uri = "../Data/CSV/history.csv";
         $file_history = $this->read_csv($this->history_uri);
         $file_history = $this->extract_data($file_history);
@@ -32,10 +40,23 @@ class Chronik
         $this->chronik_data = $builded_chronik_data;
     }
 
+    private function get_employee_name($id,$data): string
+    {
+        $storage_array = "" ;
+        foreach($data as $key => $value){
+            if($value[0] == $id){
+                $storage_array = $value[6].' '.$value[5];
+                return $storage_array;
+            }
+        }
+        
+    }
+
     private function build_chronik_data(string $id): array
     {
         $data =[];
         $return_array = [
+            "employee_name" => $this->employe_name,
             "id" => $id,
             "history" => $data
         ];
