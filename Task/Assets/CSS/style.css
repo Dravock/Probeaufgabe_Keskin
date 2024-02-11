@@ -163,7 +163,7 @@ td {
 
 /*Loader CSS */
 
-.insertContent .test {
+.insertContent div {
     width: 100%;
     height: 100%;
     display: flex;
@@ -183,10 +183,10 @@ td {
     }
 
     @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     } 

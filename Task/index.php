@@ -39,7 +39,7 @@ $employees_data = $init_app['employee_data'];
                 <div class="chronik_inner">
                     <span class='close'>&times;</span>
                     <div id="insertContent">
-                        <div class="test">
+                        <div>
                             <span class="loader"></span>
                         </div>
                     </div>
