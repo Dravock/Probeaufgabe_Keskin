@@ -1,0 +1,6 @@
+"staffId","birthday","birthPlace","birthName","gender","firstName","lastName","steuerId","startDate","endDate","endReason","weeklyHours","insertedBy","insertDate","updatedBy","updateDate"
+"1","1980-04-03",,"Muster","m","Max","Muster",,"2021-04-01",,,"40","system","2023-06-06 12:31:33",,"2023-06-06 12:32:37"
+"2","1985-03-02",,"Test","w","Gerda","Test",,"2022-01-01",,,"25","system","2023-06-06 12:32:29",,"2023-06-06 12:41:41"
+"3","1977-09-15",,"Maier","m","Max","Maier",,"2021-08-16","2023-08-31","Kündigung","35","system","2023-06-06 12:33:37",,"2024-02-09 22:22:45"
+"4","1990-05-22",,"Schulz","w","Marie","Schulz",,"2022-05-16",,,"40","system","2023-06-06 12:34:55",,"2023-06-06 12:42:04"
+"5","2000-07-13",,"Müller","m","Egon","Müller",,"2023-04-01",,,"10","system","2023-06-06 12:35:50",,"2023-06-06 12:42:12"
