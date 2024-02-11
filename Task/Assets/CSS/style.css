@@ -133,6 +133,10 @@ td {
 }
 
 .chronik-content {
+    display: none;
+}
+
+.chronik-content {
     position: relative;
     padding: 2rem;
 }
@@ -149,3 +153,4 @@ td {
     font-weight: bold;
     cursor: pointer;
 }
+

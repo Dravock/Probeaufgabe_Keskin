@@ -1,6 +1,6 @@
 <?php
-
 declare(strict_types=1);
+
 class Chronik extends AppInit
 {
 
@@ -19,47 +19,26 @@ class Chronik extends AppInit
         $history_file = $this->extract_data($history_file);
         $this->history_changes_uri = "./Data/CSV/history_changed_fields.csv";
         $history_changes_file = $this->read_csv($this->history_changes_uri);
+
         $history_changes_file = $this->extract_data($history_changes_file);
 
         $history_file = $this->filter_array_key($history_file, [1, 2, 6]);
+
+
+
         $history_changes_file = $this->filter_array_key($history_changes_file, [2, 3, 4]);
 
-        
-
         // Build Chronik Data OBJ
-        
         // Get all Employee ID's
         $employee_ids =  $this->get_employee_ids($history_file);
         foreach ($employee_ids as $key => $value) {
-            $this->chronik_data[$value] = [
+            $this->chronik_data['MA_Id_'.$value] = [
                 "history" => $history_file,
                 "history_changes" => $history_changes_file
             ];
         }
 
-        $history_sorted = $this->sort_by_ID($this->chronik_data);
-
-        //Filter Chronik Data
-        $this->chronik_data = [
-            "history" => $history_sorted,
-            "history_changes" => $history_changes_file
-        ];
-        $t = 0;
     }
-
-    private function sort_by_ID($the_data): array
-    {   
-        $sorted_data = array();
-        // User Iteration
-        foreach ($the_data as $key => $ma_data) {
-            foreach ($ma_data['history'] as $key_2 => $value_arr){
-                if($value_arr[1] == $key){
-                    $sorted_data[$key]['history'][$key_2] = $value_arr;
-                }
-            }    
-    }
-    return $sorted_data;
-}
 
     private function extract_data(array $data): array
     {
@@ -87,8 +66,8 @@ class Chronik extends AppInit
         $employee_ids = array();
         foreach ($the_data as $i => $value_1) {
             foreach ($value_1 as $key => $value_2) {
-                if(!in_array($value_2, $employee_ids) && $key === 1) {
-                    $employee_ids[$i] = $value_2;
+                if (!in_array($value_2, $employee_ids) && $key === 1) {
+                    array_push($employee_ids, $value_2);
                 }
             }
         }

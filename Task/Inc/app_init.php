@@ -73,6 +73,7 @@ class AppInit
         return $storage_array;
     }
 
+    // Protected Methods
     protected function extract_csv_header($csv_path): array
     {
         $file = $this->read_csv($csv_path);
@@ -87,6 +88,7 @@ class AppInit
         return $file;
     }
 
+    // Private Methods
     private function normalize_header_arr($get_csv_headers): array
     {
         $count_loops = 0;
@@ -192,6 +194,7 @@ class AppInit
         return strcmp($a['name'], $b['name']);
     }
 
+    // Public Methods
     public function getAllEmployees(): array
     {
         return $this->data; 

@@ -28,6 +28,10 @@ get_chronik_data();
 $tableheader_columns = $init_app['tableheader'];
 $employees_data = $init_app['employee_data'];
 
+
+$test = [1,2,3,4,5];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -42,51 +46,107 @@ $employees_data = $init_app['employee_data'];
 
 <body>
     <main>
-
         <section>
             <div class="chronik">
+                <div class="headline">
+                    <h2>Chronik der Wochenstunden</h2>
+                    <span class="close">&times;</span>
+                </div>
                 <div class="chronik-content">
-                    <div class="headline">
-                        <h2>Chronik der Wochenstunden</h2>
-                        <span class="close">&times;</span>
-                    </div>
-                    <div class="box">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Gültig-Ab Datum</th>
-                                    <th>Wochenstunden</th>
-                                    <th>Änderung gemacht durch</th>
-                                </tr>
-                            </thead>
-                            <tbody id="chronik-table">
-                                <tr>
-                                    <td>01.01.2021</td>
-                                    <td>40h</td>
-                                    <td>Max Mustermann</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                        <h2>Änderungen</h2>
-                        <div>
+                    <div class="chronik-content-1">
+                        <div class="headline">
+                            <h2>Chronik der Wochenstunden</h2>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="box">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Letzte Änderung der Wochenstunden</th>
-                                        <th>Alter Wert</th>
-                                        <th>Neuer Wert</th>
+                                        <th>Gültig-Ab Datum</th>
+                                        <th>Wochenstunden</th>
+                                        <th>Änderung gemacht durch</th>
                                     </tr>
                                 </thead>
-                                <tbody id="chronik-changes-table">
+                                <tbody id="chronik-table">
                                     <tr>
                                         <td>01.01.2021</td>
                                         <td>40h</td>
-                                        <td>38h</td>
+                                        <td>Max Mustermann</td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div>
+                            <h2>Änderungen</h2>
+                            <div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Letzte Änderung der Wochenstunden</th>
+                                            <th>Alter Wert</th>
+                                            <th>Neuer Wert</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="chronik-changes-table">
+                                        <tr>
+                                            <td>01.01.2021</td>
+                                            <td>40h</td>
+                                            <td>38h</td>
+                                        </tr>
+                                        <tr>
+                                            <td>01.01.2021</td>
+                                            <td>40h</td>
+                                            <td>38h</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chronik-content-2">
+                        <div class="box">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Gültig-Ab Datum</th>
+                                        <th>Wochenstunden</th>
+                                        <th>Änderung gemacht durch</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="chronik-table">
+                                    <tr>
+                                        <td>01.01.2021</td>
+                                        <td>40h</td>
+                                        <td>Max Mustermann</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <h2>Änderungen</h2>
+                            <div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Letzte Änderung der Wochenstunden</th>
+                                            <th>Alter Wert</th>
+                                            <th>Neuer Wert</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="chronik-changes-table">
+                                        <tr>
+                                            <td>01.01.2021</td>
+                                            <td>40h</td>
+                                            <td>38h</td>
+                                        </tr>
+                                        <tr>
+                                            <td>01.01.2021</td>
+                                            <td>40h</td>
+                                            <td>38h</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,22 +174,22 @@ $employees_data = $init_app['employee_data'];
                             $update_date = $value_arrays['updateDate'];
                             $name = $value_arrays['name'];
                         ?>
-                            <tr>
-                                <td><b><?= $name ?></b></td>
-                                <td><?= date("d.m.Y", strtotime($start_date)) ?></td>
-                                <?php if (!empty($end_date)) : ?>
-                                    <td><?= date("d.m.Y", strtotime($end_date)) ?></td>
-                                <?php else : ?>
-                                    <td> - </td>
-                                <?php endif; ?>
-                                <td><b><?= $weekly_hours ?>h</b></td>
-                                <td><?= date("d.m.Y / H:i:s", strtotime($update_date))  ?></td>
-                                <td>
-                                    <button data-btn="ma-id-<?= $ma_id ?>" class="btn" id="btn-<?= $ma_id ?>">
-                                        <span>Chronik anzeigen</span>
-                                    </button>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><b><?= $name ?></b></td>
+                            <td><?= date("d.m.Y", strtotime($start_date)) ?></td>
+                            <?php if (!empty($end_date)) : ?>
+                                <td><?= date("d.m.Y", strtotime($end_date)) ?></td>
+                            <?php else : ?>
+                                <td> - </td>
+                            <?php endif; ?>
+                            <td><b><?= $weekly_hours ?>h</b></td>
+                            <td><?= date("d.m.Y / H:i:s", strtotime($update_date))  ?></td>
+                            <td>
+                                <button data-btn="ma-id-<?= $ma_id ?>" class="btn" id="btn-<?= $ma_id ?>">
+                                    <span>Chronik anzeigen</span>
+                                </button>
+                            </td>
+                        </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
